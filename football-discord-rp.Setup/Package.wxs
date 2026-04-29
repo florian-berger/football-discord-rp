@@ -4,8 +4,7 @@
            Id="Florian_Berger.football_discord_rp"
            Name="Football Discord-RP"
            Manufacturer="Florian Berger"
-           UpgradeCode="e757798f-53e9-4c8d-924f-7c2979fbd52f"
-           Scope="perUser">
+           UpgradeCode="e757798f-53e9-4c8d-924f-7c2979fbd52f">
     <!-- Include CAB file into MSI-->
     <MediaTemplate EmbedCab="yes" />
     

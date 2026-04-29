@@ -11,7 +11,7 @@ To contribute to the development of this project, take a look at the [Contributi
 ## Download and installation
 ![GitHub Release](https://img.shields.io/github/v/release/florian-berger/football-discord-rp?style=for-the-badge&logo=github&label=Latest%20Release)
 
-All versions are published via GitHub Releases. Just download the MSI installer and execute it. There are no administrative privileges required.
+All versions are published via GitHub Releases. Just download the MSI installer and execute it.
 
 ## Usage
 When starting the program, it automatically tries to connect to your Discord client. If the connection succeeded, it is displayed in the status bar, together with the avatar and the username of your Discord account. A rich presence is **not** set automatically.
