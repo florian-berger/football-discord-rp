@@ -1,0 +1,21 @@
+﻿<Project Sdk="WixToolset.Sdk/7.0.0">
+  <PropertyGroup>
+    <AcceptEula>wix7</AcceptEula>
+
+    <EnableProjectHarvesting>true</EnableProjectHarvesting>
+    <HarvestProjectsVerboseOutput>true</HarvestProjectsVerboseOutput>
+    <HarvestProjectsDirectoryIds>INSTALLFOLDER</HarvestProjectsDirectoryIds>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="MIT-License.rtf" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\football-discord-rp\football-discord-rp.csproj" />
+  </ItemGroup>
+</Project>
