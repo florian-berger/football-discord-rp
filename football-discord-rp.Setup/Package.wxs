@@ -12,12 +12,20 @@
 
     <WixVariable
       Id="WixUILicenseRtf"
-      Value="MIT-License.rtf"
-    />
+      Value="MIT-License.rtf" />
+    <WixVariable
+      Id="WixUIDialogBmp"
+      Value="images/main_banner.bmp" />
+    <WixVariable
+      Id="WixUIBannerBmp"
+      Value="images/top_banner.bmp" />
 
     <ui:WixUI Id="WixUI_InstallDir"
               InstallDirectory="INSTALLFOLDER" />
     <UIRef Id="WixUI_ErrorProgressText" />
+
+    <Icon Id="AppIcon.ico" SourceFile="..\football-discord-rp\fdrp.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
 
     <DirectoryRef Id="ApplicationProgramsFolder">
       <Component Id="ApplicationShortcut" Guid="e428b5be-4ef0-439c-b035-6b489e289a5c">
