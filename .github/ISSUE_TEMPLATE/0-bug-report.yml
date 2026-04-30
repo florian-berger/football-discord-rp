@@ -1,0 +1,37 @@
+name: Bug report
+description: If you encounter any error, choose this type of issue.
+title: '[Bug]: '
+labels:
+  - bug
+type: bug
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Enter the version which causes the problem
+      placeholder: e.g. 26.1
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe the issues as detailed as possible
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Reproduction steps
+      description: Explain what actions needs to be done to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What behavior do you expect that should happen?
+    validations:
+      required: true
+

@@ -1,0 +1,16 @@
+name: League request
+description: You want to see a new league added to the tool? Tell me which!
+title: '[League]: '
+labels:
+  - league
+body:
+  - type: input
+    id: league
+    attributes:
+      label: League/Tournament
+      description: >-
+        Please tell me which league or tournament you want to see added to the
+        product.
+      placeholder: e.g. Premier League
+    validations:
+      required: true

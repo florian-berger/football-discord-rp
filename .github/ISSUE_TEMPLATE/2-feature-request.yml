@@ -1,0 +1,21 @@
+name: Feature request
+description: >-
+  You want to have a feature request, that is not an additional
+  league/tournament? Please tell me using this issue type.
+title: '[Feature]: '
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe the feature as detailed as possible
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional info
+      description: >-
+        Do you have any additional info, like a prepared mockup, screenshot, ...? Please share it here.
