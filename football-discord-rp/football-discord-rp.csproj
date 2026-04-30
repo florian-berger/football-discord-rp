@@ -8,7 +8,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>football_discord_rp.App</StartupObject>
+    <ApplicationIcon>fdrp.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="fdrp.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DiscordRichPresence" Version="1.6.1.70" />
