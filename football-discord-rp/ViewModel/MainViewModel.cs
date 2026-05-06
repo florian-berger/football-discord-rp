@@ -128,15 +128,7 @@ namespace football_discord_rp.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            SelectedLeague = !string.IsNullOrWhiteSpace(FootballDiscordRp.Settings.SelectedLeague)
-                ? DataStore.Leagues.FirstOrDefault(l => l.Id.Equals(FootballDiscordRp.Settings.SelectedLeague))
-                : DataStore.Leagues.FirstOrDefault();
-
-            SelectedDetailType = FootballDiscordRp.Settings.DetailType;
-            CustomDetail = FootballDiscordRp.Settings.CustomDetail;
-
-            IsDarkMode = FootballDiscordRp.Settings.UseDarkMode;
-            OnThemeChanged();
+            ApplySettings();
 
             _saveSettingsDebouncer = new Debouncer(TimeSpan.FromSeconds(1), SaveSettings);
         }
@@ -370,6 +362,22 @@ namespace football_discord_rp.ViewModel
             ThemeManager.Current.ApplicationTheme = theme;
 
             ValueHasChanged();
+        }
+
+        private void ApplySettings()
+        {
+            if (!string.IsNullOrWhiteSpace(FootballDiscordRp.Settings.SelectedLeague))
+            {
+                SelectedLeague =
+                    DataStore.Leagues.FirstOrDefault(l => l.Id.Equals(FootballDiscordRp.Settings.SelectedLeague));
+            }
+            SelectedLeague ??= DataStore.Leagues.FirstOrDefault();
+
+            SelectedDetailType = FootballDiscordRp.Settings.DetailType;
+            CustomDetail = FootballDiscordRp.Settings.CustomDetail;
+
+            IsDarkMode = FootballDiscordRp.Settings.UseDarkMode;
+            OnThemeChanged();
         }
 
         private void SaveSettings()
