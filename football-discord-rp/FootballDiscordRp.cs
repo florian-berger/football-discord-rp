@@ -20,6 +20,8 @@ namespace football_discord_rp
 
         public static string WindowTitle = $"{AppName} {Assembly.GetExecutingAssembly().GetName().Version?.ToShortString() ?? "DEV"}";
 
+        public static AppSettings Settings => field ??= AppSettings.Load();
+
         #endregion Public properties
     }
 }

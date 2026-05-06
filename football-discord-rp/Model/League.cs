@@ -6,6 +6,11 @@
     public class League
     {
         /// <summary>
+        ///     Identifier for the league, used for saving and applying settings
+        /// </summary>
+        public required string Id { get; set; }
+        
+        /// <summary>
         ///     Name of the league
         /// </summary>
         public required string Name { get; set; }
