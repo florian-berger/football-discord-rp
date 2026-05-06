@@ -22,4 +22,8 @@
     <PackageReference Include="Prism.Wpf" Version="9.0.537" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\football-discord-rp.Data\football-discord-rp.Data.csproj" />
+  </ItemGroup>
+
 </Project>

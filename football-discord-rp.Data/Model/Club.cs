@@ -1,4 +1,4 @@
-﻿namespace football_discord_rp.Model
+﻿namespace football_discord_rp.Data.Model
 {
     /// <summary>
     ///     Class representing a football club

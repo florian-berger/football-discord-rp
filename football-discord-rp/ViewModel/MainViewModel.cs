@@ -369,9 +369,9 @@ namespace football_discord_rp.ViewModel
             if (!string.IsNullOrWhiteSpace(FootballDiscordRp.Settings.SelectedLeague))
             {
                 SelectedLeague =
-                    DataStore.Leagues.FirstOrDefault(l => l.Id.Equals(FootballDiscordRp.Settings.SelectedLeague));
+                    DataStore.AppLeagues.FirstOrDefault(l => l.Id.Equals(FootballDiscordRp.Settings.SelectedLeague));
             }
-            SelectedLeague ??= DataStore.Leagues.FirstOrDefault();
+            SelectedLeague ??= DataStore.AppLeagues.FirstOrDefault();
 
             SelectedDetailType = FootballDiscordRp.Settings.DetailType;
             CustomDetail = FootballDiscordRp.Settings.CustomDetail;
