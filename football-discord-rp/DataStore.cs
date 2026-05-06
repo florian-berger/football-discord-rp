@@ -10,6 +10,7 @@
         /// </summary>
         private static readonly League LeagueGer1 = new()
         {
+            Id = "DEU_1",
             Name = "Bundesliga",
             Season = "2025/26",
             ImageKey = "de_1",
@@ -113,6 +114,7 @@
         /// </summary>
         private static readonly League LeagueGer2 = new()
         {
+            Id = "DEU_2",
             Name = "2. Bundesliga",
             Season = "2025/26",
             ImageKey = "de_2",
@@ -216,6 +218,7 @@
         /// </summary>
         private static readonly League LeagueGer3 = new()
         {
+            Id = "DEU_3",
             Name = "3. Liga",
             Season = "2025/26",
             Clubs = new List<Club>
@@ -328,6 +331,7 @@
         /// </summary>
         private static readonly League FifaWorldCup = new()
         {
+            Id = "INT_WorldCup",
             Name = "FIFA World Cup",
             Season = "2026",
             Clubs = new List<Club>

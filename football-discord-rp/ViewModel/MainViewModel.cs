@@ -15,6 +15,8 @@ namespace football_discord_rp.ViewModel
     {
         #region Private variables
 
+        private readonly Debouncer? _saveSettingsDebouncer;
+
         private DiscordRpcClient? _client;
 
         #endregion Private variables
@@ -27,7 +29,7 @@ namespace football_discord_rp.ViewModel
         public League? SelectedLeague
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         }
 
         /// <summary>
@@ -36,7 +38,7 @@ namespace football_discord_rp.ViewModel
         public Club? SelectedHomeTeam
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         } = null;
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace football_discord_rp.ViewModel
         public Club? SelectedAwayTeam
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         } = null;
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace football_discord_rp.ViewModel
         public string? CustomDetail
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         }
 
         /// <summary>
@@ -63,8 +65,8 @@ namespace football_discord_rp.ViewModel
         public SelectedDetailType SelectedDetailType
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
-        } = SelectedDetailType.DetailTypeConference;
+            set => SetProperty(ref field, value, ValueHasChanged);
+        }
 
         /// <summary>
         ///     Represents the current state of the connection to Discord
@@ -72,7 +74,7 @@ namespace football_discord_rp.ViewModel
         public bool IsConnected
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         }
 
         /// <summary>
@@ -81,7 +83,7 @@ namespace football_discord_rp.ViewModel
         public bool HasPresence
         {
             get;
-            set => SetProperty(ref field, value, UpdateCommandsCanExecute);
+            set => SetProperty(ref field, value, ValueHasChanged);
         }
 
         /// <summary>
@@ -126,9 +128,9 @@ namespace football_discord_rp.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            SelectedLeague = DataStore.Leagues.FirstOrDefault();
+            ApplySettings();
 
-            IsDarkMode = ThemeManager.Current.ActualApplicationTheme == ApplicationTheme.Dark;
+            _saveSettingsDebouncer = new Debouncer(TimeSpan.FromSeconds(1), SaveSettings);
         }
 
         #endregion Constructor
@@ -345,16 +347,46 @@ namespace football_discord_rp.ViewModel
             return true;
         }
 
-        private void UpdateCommandsCanExecute()
+        private void ValueHasChanged()
         {
             SetPresenceCommand.RaiseCanExecuteChanged();
             ClearPresenceCommand.RaiseCanExecuteChanged();
+
+            // Invoke the debouncer to save the new settings after the defined interval
+            _saveSettingsDebouncer?.Invoke();
         }
 
         private void OnThemeChanged()
         {
             var theme = IsDarkMode ? ApplicationTheme.Dark : ApplicationTheme.Light;
             ThemeManager.Current.ApplicationTheme = theme;
+
+            ValueHasChanged();
+        }
+
+        private void ApplySettings()
+        {
+            if (!string.IsNullOrWhiteSpace(FootballDiscordRp.Settings.SelectedLeague))
+            {
+                SelectedLeague =
+                    DataStore.Leagues.FirstOrDefault(l => l.Id.Equals(FootballDiscordRp.Settings.SelectedLeague));
+            }
+            SelectedLeague ??= DataStore.Leagues.FirstOrDefault();
+
+            SelectedDetailType = FootballDiscordRp.Settings.DetailType;
+            CustomDetail = FootballDiscordRp.Settings.CustomDetail;
+
+            IsDarkMode = FootballDiscordRp.Settings.UseDarkMode;
+            OnThemeChanged();
+        }
+
+        private void SaveSettings()
+        {
+            FootballDiscordRp.Settings.SelectedLeague = SelectedLeague?.Id;
+            FootballDiscordRp.Settings.DetailType = SelectedDetailType;
+            FootballDiscordRp.Settings.CustomDetail = CustomDetail;
+            FootballDiscordRp.Settings.UseDarkMode = IsDarkMode;
+            FootballDiscordRp.Settings.Save();
         }
 
         #endregion Private methods
