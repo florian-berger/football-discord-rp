@@ -1,0 +1,26 @@
+name: Check Continuous Integration (CI)
+
+on:
+  pull_request_target:
+    branches:
+      - 'main'
+
+jobs:
+  pr-build-check:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: 'Checkout repository'
+      uses: actions/checkout@v4
+
+    - name: 'Setup .NET10 SDK'
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0'
+
+    - name: 'Execute build'
+      run: |
+        dotnet build football-discord-rp/football-discord-rp.csproj -c Release
+      shell: powershell
