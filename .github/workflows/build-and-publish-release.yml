@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: '10.0'
 
-    - name: 'Add Syncfusion license to repo'
+    - name: 'Determine version from tag'
       id: prepare_build
       run: |
         # Remove the leading 'v' from the tag name to get the version

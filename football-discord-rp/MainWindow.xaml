@@ -88,9 +88,9 @@
 
             <ui:SimpleStackPanel Spacing="10">
                 <ComboBox ui:ControlHelper.Header="League" HorizontalAlignment="Stretch"
-                              ItemsSource="{x:Static app:DataStore.Leagues}"
-                              SelectedItem="{Binding Path=SelectedLeague, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              DisplayMemberPath="DisplayName" />
+                          ItemsSource="{x:Static app:DataStore.AppLeagues}"
+                          SelectedItem="{Binding Path=SelectedLeague, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          DisplayMemberPath="DisplayName" />
 
                 <RadioButton Content="Watching conference" IsChecked="{Binding Path=SelectedDetailType,
                         Converter={StaticResource SelectedDetailTypeToBooleanConverter},
