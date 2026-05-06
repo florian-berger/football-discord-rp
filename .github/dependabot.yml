@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    # List all project directories here
+    directories:
+      - "/football-discord-rp"
+      - "/football-discord-rp.Data"
+      - "/football-discord-rp.Setup"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "02:00"
+      timezone: "UTC"
