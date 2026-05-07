@@ -22,6 +22,11 @@ namespace football_discord_rp
 
         public static AppSettings Settings => field ??= AppSettings.Load();
 
+        /// <summary>
+        ///     Set to true if the application was started with "--skip-update-notification" arg or running in DEBUG mode
+        /// </summary>
+        public static bool SkipUpdateNotification { get; set; }
+
         #endregion Public properties
     }
 }
