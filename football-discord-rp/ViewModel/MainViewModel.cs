@@ -215,6 +215,12 @@ namespace football_discord_rp.ViewModel
                     await Application.Current.Dispatcher.Invoke(async () =>
                     {
                         NewVersionDownloadLink = newestVersion.Value.ReleaseLink;
+                        
+                        if (FootballDiscordRp.SkipUpdateNotification)
+                        {
+                            return;
+                        }
+
                         var versionString = newestVersion.Value.Version.ToShortString();
 
                         var dlg = new ContentDialog
