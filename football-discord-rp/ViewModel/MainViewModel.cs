@@ -160,7 +160,7 @@ namespace football_discord_rp.ViewModel
         /// <summary>
         ///     Command to check for the availability of a new version
         /// </summary>
-        public AsyncDelegateCommand CheckVersionUpdateCommand => field ??= new AsyncDelegateCommand(CheckForVersionUpdate);
+        public AsyncDelegateCommand CheckVersionUpdateCommand => field ??= new AsyncDelegateCommand(() => CheckForVersionUpdate());
 
         #endregion Commands
 
@@ -173,15 +173,13 @@ namespace football_discord_rp.ViewModel
                 return;
             }
 
-            _ = CheckForVersionUpdate();
+            _ = CheckForVersionUpdate(true);
 
             _client = new DiscordRpcClient(FootballDiscordRp.DiscordApplicationId);
             _client.OnReady += DiscordClient_OnReady;
             _client.OnPresenceUpdate += DiscordClientClient_OnPresenceUpdate;
 
             _client.Initialize();
-
-            CheckVersionUpdateCommand.Execute();
         }
 
         private void Exit()
@@ -199,7 +197,7 @@ namespace football_discord_rp.ViewModel
             _client?.ClearPresence();
         }
 
-        private async Task CheckForVersionUpdate()
+        private async Task CheckForVersionUpdate(bool isStartup = false)
         {
             var currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             if (currentVersion == null)
@@ -216,7 +214,9 @@ namespace football_discord_rp.ViewModel
                     {
                         NewVersionDownloadLink = newestVersion.Value.ReleaseLink;
                         
-                        if (FootballDiscordRp.SkipUpdateNotification)
+                        // When the update was checked on startup and the notification is disabled,
+                        // do not show the dialog. Continue showing it checking via the menu entry
+                        if (isStartup && FootballDiscordRp.SkipUpdateNotification)
                         {
                             return;
                         }
