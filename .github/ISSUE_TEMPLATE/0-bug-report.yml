@@ -3,7 +3,6 @@ description: If you encounter any error, choose this type of issue.
 title: '[Bug]: '
 labels:
   - bug
-type: bug
 body:
   - type: input
     id: version
