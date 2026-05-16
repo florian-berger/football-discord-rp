@@ -106,6 +106,69 @@ namespace football_discord_rp.Data
         };
 
         /// <summary>
+        ///     Representing the first English division
+        /// </summary>
+        public static readonly League Eng1 = new()
+        {
+            Id = "ENG_1",
+            Name = "Premier League",
+            Season = "2025/26",
+            Clubs =
+            [
+                England.LiverpoolFc,
+                England.Arsenal,
+                England.ManCity,
+                England.ChelseaFc,
+                England.NewcastleUnited,
+                England.AstonVilla,
+                England.NottinghamForest,
+                England.BrightonHoveAlbion,
+                England.Bournemouth,
+                England.Brentford,
+                England.FcFulham,
+                England.CrystalPalace,
+                England.FcEverton,
+                England.WestHam,
+                England.ManUnited,
+                England.Wolverhamption,
+                England.Tottenham,
+                England.LeedsUnited,
+                England.BurnleyFc,
+                England.SunderlandFc
+            ]
+        };
+
+        public static readonly League Esp1 = new()
+        {
+            Id = "ESP_1",
+            Name = "La Liga",
+            Season = "2025/26",
+            Clubs =
+            [
+                Spain.AthleticClub,
+                Spain.AtleticoMadrid,
+                Spain.FcBarcelona,
+                Spain.CaOsasuna,
+                Spain.CeltaVigo,
+                Spain.DeportivoAlaves,
+                Spain.ElcheCf,
+                Spain.GetafeCf,
+                Spain.GironaFc,
+                Spain.LevanteUd,
+                Spain.RayoVallecano,
+                Spain.RcdEspanyol,
+                Spain.RcdMallorca,
+                Spain.RealBetis,
+                Spain.RealMadrid,
+                Spain.RealOviedo,
+                Spain.RealSociedad,
+                Spain.SevillaFc,
+                Spain.ValenciaFc,
+                Spain.VillarealCf,
+            ]
+        };
+
+        /// <summary>
         ///     Representing the FIFA World Cup
         /// </summary>
         public static readonly League FifaWorldCup = new()
