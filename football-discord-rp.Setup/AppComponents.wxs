@@ -1,7 +1,7 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
     <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
-      <File Source="football-discord-rp.exe" Id="file_footballDiscordRpExe" />
+      <File Source="football-discord-rp.exe" Id="file_footballDiscordRpExe" KeyPath="yes" />
 
       <Files Include="$(var.football_discord_rp.TargetDir)\**">
         <!--<Exclude Files="*.pdb" />-->
