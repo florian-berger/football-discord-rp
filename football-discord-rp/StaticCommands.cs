@@ -51,13 +51,12 @@ namespace football_discord_rp
         {
             var dlg = new ContentDialog
             {
-                Title = "About Football Discord RP",
-                Content = "" +
-                          $"Version: {FootballDiscordRp.AppName}\n" +
-                          $"Repository: {FootballDiscordRp.RepositoryUrl}\n\n" +
-                          "This application is open-source and licensed under the MIT License.",
-                CloseButtonText = "Close",
-                PrimaryButtonText = "Open repository",
+                Title = AppResource.AboutTitle,
+                Content = $"{AppResource.Version}: {FootballDiscordRp.AppName}\n" +
+                          $"{AppResource.Repository}: {FootballDiscordRp.RepositoryUrl}\n\n" +
+                          $"{AppResource.OpenSourceHint}",
+                CloseButtonText = AppResource.Close,
+                PrimaryButtonText = AppResource.OpenRepository,
                 DefaultButton = ContentDialogButton.Close
             };
             
