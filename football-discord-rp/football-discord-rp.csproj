@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\football-discord-rp.Data\football-discord-rp.Data.csproj" />
+    <ProjectReference Include="..\football-discord-rp.Resources\football-discord-rp.Resources.csproj" />
   </ItemGroup>
 
 </Project>

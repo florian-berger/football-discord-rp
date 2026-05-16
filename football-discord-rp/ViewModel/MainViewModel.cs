@@ -93,7 +93,7 @@ namespace football_discord_rp.ViewModel
         {
             get;
             set => SetProperty(ref field, value);
-        } = "Not connected";
+        } = AppResource.NotConnected;
 
         /// <summary>
         ///     Source of the Avatar of the connected user
@@ -225,10 +225,10 @@ namespace football_discord_rp.ViewModel
 
                         var dlg = new ContentDialog
                         {
-                            Title = "Update available",
-                            Content = $"A new version ({versionString}) is available. Do you want do download it now?",
-                            PrimaryButtonText = "Yes",
-                            SecondaryButtonText = "No",
+                            Title = AppResource.UpdateAvailable,
+                            Content = string.Format(AppResource.UpdateAvailableDescription, versionString),
+                            PrimaryButtonText = AppResource.Yes,
+                            SecondaryButtonText = AppResource.No,
                             DefaultButton = ContentDialogButton.Primary
                         };
                         var result = await dlg.ShowAsync();
@@ -256,7 +256,7 @@ namespace football_discord_rp.ViewModel
                 var avatarUrl = args.User.GetAvatarURL(User.AvatarFormat.PNG);
                 var avatarSrc = WebImageHelper.GetImageSourceFromPath(avatarUrl);
 
-                ConnectionStateText = $"Connected (@{args.User.DisplayName})";
+                ConnectionStateText = string.Format(AppResource.ConnectedWithName, args.User.DisplayName);
                 ConnectedUserAvatarSource = avatarSrc;
 
                 IsConnected = true;
@@ -316,7 +316,7 @@ namespace football_discord_rp.ViewModel
                     rp.Details = CustomDetail ?? string.Empty;
                     break;
                 case SelectedDetailType.DetailTypeConference:
-                    rp.Details = "Conference";
+                    rp.Details = AppResource.WatchingConference;
                     break;
                 case SelectedDetailType.DetailTypeMatchup:
                     rp.Details = $"{SelectedHomeTeam?.ShortName} vs. {SelectedAwayTeam?.ShortName}";
@@ -325,7 +325,7 @@ namespace football_discord_rp.ViewModel
 
             rp.WithButtons(new Button
             {
-                Label = "Also watching?",
+                Label = AppResource.AlsoWatching,
                 Url = FootballDiscordRp.RepositoryUrl
             });
 

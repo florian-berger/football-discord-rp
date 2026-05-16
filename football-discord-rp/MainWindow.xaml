@@ -10,6 +10,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:interactivity="http://prismlibrary.com/"
+        xmlns:lang="clr-namespace:football_discord_rp.Resources.Language;assembly=football-discord-rp.Resources"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d" Title="{x:Static app:FootballDiscordRp.WindowTitle}" Height="600" Width="500"
         ResizeMode="NoResize">
@@ -30,32 +31,32 @@
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Main">
-                <MenuItem Header="Exit" Command="{Binding Path=ExitCommand, Mode=OneTime}"
+            <MenuItem Header="{x:Static lang:AppResource.Main}">
+                <MenuItem Header="{x:Static lang:AppResource.Exit}" Command="{Binding Path=ExitCommand, Mode=OneTime}"
                           InputGestureText="Alt + F4"/>
             </MenuItem>
 
-            <MenuItem Header="Settings">
-                <MenuItem Header="Dark mode"
+            <MenuItem Header="{x:Static lang:AppResource.Settings}">
+                <MenuItem Header="{x:Static lang:AppResource.DarkMode}"
                           IsCheckable="True"
                           IsChecked="{Binding Path=IsDarkMode, Mode=TwoWay}"
                           CommandParameter="{x:Static ui:ApplicationTheme.Dark}"  />
             </MenuItem>
 
-            <MenuItem Header="Help">
-                <MenuItem Header="Open repository"
+            <MenuItem Header="{x:Static lang:AppResource.Help}">
+                <MenuItem Header="{x:Static lang:AppResource.OpenRepository}"
                           Command="{x:Static app:StaticCommands.OpenUriCommand}"
                           CommandParameter="{x:Static app:FootballDiscordRp.RepositoryUrl}" />
                 <Separator />
-                <MenuItem Header="Check for update" Command="{Binding Path=CheckVersionUpdateCommand, Mode=OneTime}" />
-                <MenuItem Header="About …" Command="{x:Static app:StaticCommands.ShowAboutCommand}" />
+                <MenuItem Header="{x:Static lang:AppResource.CheckForUpdate}" Command="{Binding Path=CheckVersionUpdateCommand, Mode=OneTime}" />
+                <MenuItem Header="{x:Static lang:AppResource.About}" Command="{x:Static app:StaticCommands.ShowAboutCommand}" />
             </MenuItem>
         </Menu>
 
         <StatusBar DockPanel.Dock="Bottom" Padding="5">
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="Status:" FontWeight="Bold" Margin="0,0,5,0" />
+                    <TextBlock Text="{x:Static lang:AppResource.State}" FontWeight="Bold" Margin="0,0,5,0" />
                     <Image Source="{Binding Path=ConnectedUserAvatarSource, Mode=OneWay}"
                            Visibility="{Binding Path=ConnectedUserAvatarSource, Mode=OneWay, Converter={StaticResource NotNullToVisibilityConverter}}"
                            Height="16" VerticalAlignment="Center" Margin="0,0,5,0" />
@@ -75,7 +76,7 @@
                         </ControlTemplate>
                     </Button.Template>
 
-                    <TextBlock Text="Update available!"/>
+                    <TextBlock Text="{x:Static lang:AppResource.UpdateAvailableEx}"/>
                 </Button>
             </StatusBarItem>
         </StatusBar>
@@ -87,16 +88,16 @@
             </Grid.RowDefinitions>
 
             <ui:SimpleStackPanel Spacing="10">
-                <ComboBox ui:ControlHelper.Header="League" HorizontalAlignment="Stretch"
+                <ComboBox ui:ControlHelper.Header="{x:Static lang:AppResource.League}" HorizontalAlignment="Stretch"
                           ItemsSource="{x:Static app:DataStore.AppLeagues}"
                           SelectedItem="{Binding Path=SelectedLeague, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           DisplayMemberPath="DisplayName" />
 
-                <RadioButton Content="Watching conference" IsChecked="{Binding Path=SelectedDetailType,
+                <RadioButton Content="{x:Static lang:AppResource.DetailsConference}" IsChecked="{Binding Path=SelectedDetailType,
                         Converter={StaticResource SelectedDetailTypeToBooleanConverter},
                         ConverterParameter={x:Static model:SelectedDetailType.DetailTypeConference}}" />
 
-                <RadioButton Content="Watching single match" IsChecked="{Binding Path=SelectedDetailType,
+                <RadioButton Content="{x:Static lang:AppResource.DetailsSingle}" IsChecked="{Binding Path=SelectedDetailType,
                         Converter={StaticResource SelectedDetailTypeToBooleanConverter},
                         ConverterParameter={x:Static model:SelectedDetailType.DetailTypeMatchup}}" />
 
@@ -108,17 +109,19 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
-                    <ComboBox Grid.Column="0" ui:ControlHelper.PlaceholderText="Home team" HorizontalAlignment="Stretch"
-                                  ItemsSource="{Binding Path=SelectedLeague.Clubs, Mode=OneWay}"
-                                  SelectedItem="{Binding Path=SelectedHomeTeam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                  DisplayMemberPath="FullName"
-                                  IsEnabled="{Binding Path=SelectedDetailType, 
-                                    Converter={StaticResource SelectedDetailTypeToBooleanConverter},
-                                    ConverterParameter={x:Static model:SelectedDetailType.DetailTypeMatchup}}"  />
+                    <ComboBox Grid.Column="0" ui:ControlHelper.PlaceholderText="{x:Static lang:AppResource.HomeTeam}"
+                              HorizontalAlignment="Stretch"
+                              ItemsSource="{Binding Path=SelectedLeague.Clubs, Mode=OneWay}"
+                              SelectedItem="{Binding Path=SelectedHomeTeam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              DisplayMemberPath="FullName"
+                              IsEnabled="{Binding Path=SelectedDetailType, 
+                                Converter={StaticResource SelectedDetailTypeToBooleanConverter},
+                                ConverterParameter={x:Static model:SelectedDetailType.DetailTypeMatchup}}"  />
 
-                    <TextBlock Grid.Column="1" Text="vs." VerticalAlignment="Center" Margin="10,0" />
+                    <TextBlock Grid.Column="1" Text="{x:Static lang:AppResource.Versus}" VerticalAlignment="Center" Margin="10,0" />
 
-                    <ComboBox Grid.Column="2" ui:ControlHelper.PlaceholderText="Away team" HorizontalAlignment="Stretch"
+                    <ComboBox Grid.Column="2" ui:ControlHelper.PlaceholderText="{x:Static lang:AppResource.AwayTeam}"
+                              HorizontalAlignment="Stretch"
                               ItemsSource="{Binding Path=SelectedLeague.Clubs, Mode=OneWay}"
                               SelectedItem="{Binding Path=SelectedAwayTeam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               DisplayMemberPath="FullName"
@@ -128,24 +131,24 @@
                     <!-- ReSharper restore Xaml.PossibleNullReferenceException -->
                 </Grid>
 
-                <RadioButton Content="Define custom detail" IsChecked="{Binding Path=SelectedDetailType,
+                <RadioButton Content="{x:Static lang:AppResource.DetailsCustom}" IsChecked="{Binding Path=SelectedDetailType,
                         Converter={StaticResource SelectedDetailTypeToBooleanConverter},
                         ConverterParameter={x:Static model:SelectedDetailType.DetailTypeCustom}}" />
 
-                <TextBox Margin="28,-10,0,0" ui:ControlHelper.PlaceholderText="Enter your custom detail text"
+                <TextBox Margin="28,-10,0,0" ui:ControlHelper.PlaceholderText="{x:Static lang:AppResource.DetailsCustomPlaceholder}"
                              Text="{Binding Path=CustomDetail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              IsEnabled="{Binding Path=SelectedDetailType, 
                                 Converter={StaticResource SelectedDetailTypeToBooleanConverter},
                                 ConverterParameter={x:Static model:SelectedDetailType.DetailTypeCustom}}" />
 
-                <RadioButton Content="No details" IsChecked="{Binding Path=SelectedDetailType,
+                <RadioButton Content="{x:Static lang:AppResource.NoDetails}" IsChecked="{Binding Path=SelectedDetailType,
                         Converter={StaticResource SelectedDetailTypeToBooleanConverter},
                         ConverterParameter={x:Static model:SelectedDetailType.DetailTypeNone}}" />
             </ui:SimpleStackPanel>
 
             <ui:SimpleStackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,12" HorizontalAlignment="Right" Spacing="10">
-                <Button Content="Clear presence" Command="{Binding Path=ClearPresenceCommand, Mode=OneTime}" />
-                <Button Content="Set presence" Command="{Binding Path=SetPresenceCommand, Mode=OneTime}" />
+                <Button Content="{x:Static lang:AppResource.PresenceClear}" Command="{Binding Path=ClearPresenceCommand, Mode=OneTime}" />
+                <Button Content="{x:Static lang:AppResource.PresenceSet}" Command="{Binding Path=SetPresenceCommand, Mode=OneTime}" />
             </ui:SimpleStackPanel>
         </Grid>
     </DockPanel>
