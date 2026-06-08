@@ -80,6 +80,7 @@ namespace football_discord_rp.Data
             Id = "DEU_3",
             Name = "3. Liga",
             Season = "2026/27",
+            ImageKey = "de_3",
             Clubs =
             [
                 Germany.FortunaDuesseldorf,
