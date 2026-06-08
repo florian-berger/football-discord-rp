@@ -342,5 +342,29 @@ namespace football_discord_rp.Data.Clubs
             FullName = "1. FC Schweinfurt",
             ShortName = "S05"
         };
+
+        public static readonly Club SvMeppen = new()
+        {
+            FullName = "SV Meppen",
+            ShortName = "SVM"
+        };
+
+        public static readonly Club SonnenhofGrossasbach = new()
+        {
+            FullName = "SG Sonnenhof Großaspach",
+            ShortName = "SGS"
+        };
+
+        public static readonly Club FortunaKoeln = new()
+        {
+            FullName = "Fortuna Köln",
+            ShortName = "FOR"
+        };
+
+        public static readonly Club WuerzburgerKickers = new()
+        {
+            FullName = "Würzburger Kickers",
+            ShortName = "FWK"
+        };
     }
 }

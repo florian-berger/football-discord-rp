@@ -126,5 +126,17 @@ namespace football_discord_rp.Data.Clubs
             FullName = "Villarreal CF",
             ShortName = "VIL"
         };
+
+        public static readonly Club RealRacingClub = new()
+        {
+            FullName = "Real Racing Club",
+            ShortName = "RAC"
+        };
+
+        public static readonly Club RcDeportivo = new ()
+        {
+            FullName = "RC Deportivo",
+            ShortName = "DEP"
+        };
     }
 }

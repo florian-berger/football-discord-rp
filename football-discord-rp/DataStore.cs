@@ -17,6 +17,7 @@ namespace football_discord_rp
             Leagues.Ger3,
             Leagues.Eng1,
             Leagues.Esp1,
+            Leagues.Ita1,
             Leagues.FifaWorldCup
         ];
     }

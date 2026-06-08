@@ -126,5 +126,23 @@ namespace football_discord_rp.Data.Clubs
             FullName = "Sunderland",
             ShortName = "SUN"
         };
+
+        public static readonly Club CoventryCity = new()
+        {
+            FullName = "Coventry City",
+            ShortName = "COV"
+        };
+
+        public static readonly Club HullCity = new()
+        {
+            FullName = "Ipswich Town",
+            ShortName = "IPS"
+        };
+
+        public static readonly Club IpswichTown = new()
+        {
+            FullName = "Hull City",
+            ShortName = "HUL"
+        };
     }
 }

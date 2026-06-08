@@ -15,28 +15,28 @@ namespace football_discord_rp.Data
         {
             Id = "DEU_1",
             Name = "Bundesliga",
-            Season = "2025/26",
+            Season = "2026/27",
             ImageKey = "de_1",
             Clubs =
             [
                 Germany.BayernMuenchen,
-                Germany.BayerLeverkusen,
-                Germany.EintrachtFrankfurt,
                 Germany.BorussiaDortmund,
-                Germany.ScFreiburg,
-                Germany.FsvMainz,
                 Germany.RbLeipzig,
-                Germany.WerderBremen,
                 Germany.VfbStuttgart,
-                Germany.BorussiaMoenchengladbach,
-                Germany.VflWolfsburg,
-                Germany.FcAugsburg,
-                Germany.UnionBerlin,
-                Germany.StPauli,
                 Germany.TsgHoffenheim,
-                Germany.FcHeidenheim,
+                Germany.BayerLeverkusen,
+                Germany.ScFreiburg,
+                Germany.EintrachtFrankfurt,
+                Germany.FcAugsburg,
+                Germany.FsvMainz,
+                Germany.UnionBerlin,
+                Germany.BorussiaMoenchengladbach,
+                Germany.HamburgerSv,
                 Germany.FcKoeln,
-                Germany.HamburgerSv
+                Germany.WerderBremen,
+                Germany.FcSchalke,
+                Germany.SvElversberg,
+                Germany.ScPaderborn
             ]
         };
 
@@ -47,28 +47,28 @@ namespace football_discord_rp.Data
         {
             Id = "DEU_2",
             Name = "2. Bundesliga",
-            Season = "2025/26",
+            Season = "2026/27",
             ImageKey = "de_2",
             Clubs =
             [
-                Germany.HosteinKiel,
-                Germany.VflBochum,
-                Germany.SvElversberg,
-                Germany.ScPaderborn,
-                Germany.FcMagdeburg,
-                Germany.FortunaDuesseldorf,
-                Germany.FcKaiserslautern,
-                Germany.KarlsruherSc,
+                Germany.VflWolfsburg,
+                Germany.FcHeidenheim,
+                Germany.StPauli,
                 Germany.Hannover,
-                Germany.FcNuernberg,
-                Germany.HerthaBsc,
                 Germany.SvDarmstadt,
-                Germany.GreutherFuerth,
-                Germany.FcSchalke,
-                Germany.PreussenMuenster,
-                Germany.EintrachtBraunschweig,
-                Germany.ArminiaBielefeld,
+                Germany.FcKaiserslautern,
+                Germany.HerthaBsc,
+                Germany.FcNuernberg,
+                Germany.VflBochum,
+                Germany.KarlsruherSc,
                 Germany.DynamoDresden,
+                Germany.HosteinKiel,
+                Germany.ArminiaBielefeld,
+                Germany.FcMagdeburg,
+                Germany.EintrachtBraunschweig,
+                Germany.GreutherFuerth,
+                Germany.VflOsnabrueck,
+                Germany.EnergieCottbus
             ]
         };
 
@@ -79,29 +79,29 @@ namespace football_discord_rp.Data
         {
             Id = "DEU_3",
             Name = "3. Liga",
-            Season = "2025/26",
+            Season = "2026/27",
             Clubs =
             [
-                Germany.VflOsnabrueck,
-                Germany.EnergieCottbus,
+                Germany.FortunaDuesseldorf,
+                Germany.PreussenMuenster,
                 Germany.RotWeissEssen,
                 Germany.MsvDuisburg,
                 Germany.HansaRostock,
                 Germany.ScVerl,
                 Germany.AlemanniaAachen,
-                Germany.TsvMuenchen,
                 Germany.WehenWiesbaden,
                 Germany.WaldhofMannheim,
                 Germany.ViktoriaKoeln,
-                Germany.JahnRegensburg,
                 Germany.FcIngolstadt,
+                Germany.JahnRegensburg,
                 Germany.VfbStuttgart2,
                 Germany.FcSaarbruecken,
                 Germany.TsgHoffenheim2,
-                Germany.TsvHavelse,
-                Germany.SsvUlm,
-                Germany.ErzgebirgeAue,
-                Germany.FcSchweinfurt,
+                Germany.SvMeppen,
+                Germany.SonnenhofGrossasbach,
+                Germany.FortunaKoeln,
+                Germany.WuerzburgerKickers,
+                // Last missing - Havelse? Aue?
             ]
         };
 
@@ -112,29 +112,29 @@ namespace football_discord_rp.Data
         {
             Id = "ENG_1",
             Name = "Premier League",
-            Season = "2025/26",
+            Season = "2026/27",
             Clubs =
             [
-                England.LiverpoolFc,
                 England.Arsenal,
-                England.ManCity,
-                England.ChelseaFc,
-                England.NewcastleUnited,
                 England.AstonVilla,
-                England.NottinghamForest,
-                England.BrightonHoveAlbion,
                 England.Bournemouth,
                 England.Brentford,
-                England.FcFulham,
+                England.BrightonHoveAlbion,
+                England.ChelseaFc,
                 England.CrystalPalace,
                 England.FcEverton,
-                England.WestHam,
-                England.ManUnited,
-                England.Wolverhamption,
-                England.Tottenham,
+                England.FcFulham,
                 England.LeedsUnited,
-                England.BurnleyFc,
-                England.SunderlandFc
+                England.LiverpoolFc,
+                England.ManCity,
+                England.ManUnited,
+                England.NewcastleUnited,
+                England.NottinghamForest,
+                England.SunderlandFc,
+                England.Tottenham,
+                England.CoventryCity,
+                England.HullCity,
+                England.IpswichTown
             ]
         };
 
@@ -142,29 +142,59 @@ namespace football_discord_rp.Data
         {
             Id = "ESP_1",
             Name = "La Liga",
-            Season = "2025/26",
+            Season = "2026/27",
             Clubs =
             [
-                Spain.AthleticClub,
-                Spain.AtleticoMadrid,
                 Spain.FcBarcelona,
-                Spain.CaOsasuna,
+                Spain.RealMadrid,
+                Spain.VillarealCf,
+                Spain.AtleticoMadrid,
+                Spain.RealBetis,
                 Spain.CeltaVigo,
+                Spain.GetafeCf,
+                Spain.RayoVallecano,
+                Spain.ValenciaFc,
+                Spain.RealSociedad,
+                Spain.RcdEspanyol,
+                Spain.AthleticClub,
+                Spain.SevillaFc,
                 Spain.DeportivoAlaves,
                 Spain.ElcheCf,
-                Spain.GetafeCf,
-                Spain.GironaFc,
                 Spain.LevanteUd,
-                Spain.RayoVallecano,
-                Spain.RcdEspanyol,
-                Spain.RcdMallorca,
-                Spain.RealBetis,
-                Spain.RealMadrid,
-                Spain.RealOviedo,
-                Spain.RealSociedad,
-                Spain.SevillaFc,
-                Spain.ValenciaFc,
-                Spain.VillarealCf,
+                Spain.CaOsasuna,
+                Spain.RealRacingClub,
+                Spain.RcDeportivo
+                // Last missing!
+            ]
+        };
+
+        public static readonly League Ita1 = new()
+        {
+            Id = "ITA_1",
+            Name = "Serie A",
+            Season = "2026/27",
+            Clubs =
+            [
+                Italy.AtalantaBc,
+                Italy.BolognaFc,
+                Italy.Cagliari,
+                Italy.Como,
+                Italy.AcfFiorentina,
+                Italy.FrosinoneCalcio,
+                Italy.GenoaCfc,
+                Italy.InterMilan,
+                Italy.Juventus,
+                Italy.SsLazio,
+                Italy.UsLecce,
+                Italy.AcMilan,
+                Italy.AcMonza,
+                Italy.SscNapoli,
+                Italy.ParmaCalcio,
+                Italy.AsRoma,
+                Italy.UsSassuolo,
+                Italy.Torino,
+                Italy.UdineseCalcio,
+                Italy.VeneziaFc,
             ]
         };
 
@@ -176,6 +206,7 @@ namespace football_discord_rp.Data
             Id = "INT_WorldCup",
             Name = "FIFA World Cup",
             Season = "2026",
+            ImageKey = "wc_26",
             Clubs =
             [
                 International.Canada,
