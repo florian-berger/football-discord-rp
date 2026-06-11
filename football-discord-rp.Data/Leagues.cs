@@ -102,7 +102,7 @@ namespace football_discord_rp.Data
                 Germany.SonnenhofGrossasbach,
                 Germany.FortunaKoeln,
                 Germany.WuerzburgerKickers,
-                // Last missing - Havelse? Aue?
+                Germany.TsvHavelse
             ]
         };
 

@@ -28,7 +28,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Algeria = new()
         {
             FullName = "Algeria",
-            ShortName = "DZA"
+            ShortName = "ALG"
         };
         
         public static readonly Club Argentina = new()
@@ -94,7 +94,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Croatia = new()
         {
             FullName = "Croatia",
-            ShortName = "HRV"
+            ShortName = "CRO"
         };
         
         public static readonly Club Curacao = new()
@@ -136,7 +136,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Germany = new()
         {
             FullName = "Germany",
-            ShortName = "DEU"
+            ShortName = "GER"
         };
         
         public static readonly Club Ghana = new()
@@ -148,7 +148,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Haiti = new()
         {
             FullName = "Haiti",
-            ShortName = "HTI"
+            ShortName = "HAI"
         };
         
         public static readonly Club IrIran = new()
@@ -190,7 +190,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Netherlands = new()
         {
             FullName = "Netherlands",
-            ShortName = "NLD"
+            ShortName = "NED"
         };
         
         public static readonly Club NewZealand = new()
@@ -214,13 +214,13 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Paraguay = new()
         {
             FullName = "Paraguay",
-            ShortName = "PRY"
+            ShortName = "PAR"
         };
         
         public static readonly Club Portugal = new()
         {
             FullName = "Portugal",
-            ShortName = "PRT"
+            ShortName = "POR"
         };
         
         public static readonly Club Qatar = new()
@@ -232,7 +232,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club SaudiArabia = new()
         {
             FullName = "Saudi Arabia",
-            ShortName = "SAU"
+            ShortName = "KSA"
         };
         
         public static readonly Club Scotland = new()
@@ -250,7 +250,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club SouthAfrica = new()
         {
             FullName = "South Africa",
-            ShortName = "ZAF"
+            ShortName = "RSA"
         };
         
         public static readonly Club Spain = new()
@@ -268,7 +268,7 @@ namespace football_discord_rp.Data.Clubs
         public static readonly Club Switzerland = new()
         {
             FullName = "Switzerland",
-            ShortName = "CHE"
+            ShortName = "SUI"
         };
         
         public static readonly Club Tunisia = new()
