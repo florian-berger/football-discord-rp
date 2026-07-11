@@ -114,6 +114,7 @@ namespace football_discord_rp.Data
             Id = "ENG_1",
             Name = "Premier League",
             Season = "2026/27",
+            ImageKey = "en_1",
             Clubs =
             [
                 England.Arsenal,
@@ -144,6 +145,7 @@ namespace football_discord_rp.Data
             Id = "ESP_1",
             Name = "La Liga",
             Season = "2026/27",
+            ImageKey = "es_1",
             Clubs =
             [
                 Spain.FcBarcelona,
@@ -174,6 +176,7 @@ namespace football_discord_rp.Data
             Id = "ITA_1",
             Name = "Serie A",
             Season = "2026/27",
+            ImageKey = "it_1",
             Clubs =
             [
                 Italy.AtalantaBc,
