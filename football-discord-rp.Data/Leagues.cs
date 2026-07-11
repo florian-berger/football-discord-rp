@@ -202,6 +202,35 @@ namespace football_discord_rp.Data
             ]
         };
 
+        public static readonly League Fra1 = new()
+        {
+            Id = "FRA_1",
+            Name = "Ligue 1",
+            Season = "2026/27",
+            ImageKey = "fr_1",
+            Clubs =
+            [
+                France.AjAuxerre,
+                France.AngersSoc,
+                France.AsMonaco,
+                France.EsTroyesAc,
+                France.FcLorient,
+                France.LeHavreAc,
+                France.LeMansFc,
+                France.LilleOsc,
+                France.OgcNice,
+                France.OlympiqueLyonnais,
+                France.OlympiqueMarseille,
+                France.ParisFc,
+                France.ParisSaintGermain,
+                France.RcLens,
+                France.RcStrasbourgAlsace,
+                France.StadeBrestois,
+                France.StadeRennais,
+                France.ToulouseFc
+            ]
+        };
+
         /// <summary>
         ///     Representing the FIFA World Cup
         /// </summary>
