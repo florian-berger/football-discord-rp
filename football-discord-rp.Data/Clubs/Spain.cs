@@ -21,7 +21,7 @@ namespace football_discord_rp.Data.Clubs
 
         public static readonly Club FcBarcelona = new()
         {
-            FullName = "Barcelona",
+            FullName = "FC Barcelona",
             ShortName = "BAR"
         };
 
@@ -137,6 +137,12 @@ namespace football_discord_rp.Data.Clubs
         {
             FullName = "RC Deportivo",
             ShortName = "DEP"
+        };
+
+        public static readonly Club MalagaCf = new()
+        {
+            FullName = "Málaga CF",
+            ShortName = "MÁL"
         };
     }
 }

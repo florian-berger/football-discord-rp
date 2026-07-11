@@ -164,8 +164,8 @@ namespace football_discord_rp.Data
                 Spain.LevanteUd,
                 Spain.CaOsasuna,
                 Spain.RealRacingClub,
-                Spain.RcDeportivo
-                // Last missing!
+                Spain.RcDeportivo,
+                Spain.MalagaCf
             ]
         };
 
